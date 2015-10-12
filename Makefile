@@ -2,7 +2,7 @@ IMAGENAME := $(shell basename `git rev-parse --show-toplevel`)
 VERSION :=$(shell cat VERSION)
 VERSION_MINOR :=$(shell cat VERSION | cut -d "." -f 1-2)
 VERSION_MAJOR :=$(shell cat VERSION | cut -d "." -f 1)
-NAMESPACE := hypriot
+NAMESPACE ?= hypriot
 
 default: dockerbuild push
 
