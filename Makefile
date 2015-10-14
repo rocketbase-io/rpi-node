@@ -17,6 +17,8 @@ dockerbuild:
 	docker tag -f $(NAMESPACE)/$(IMAGENAME):latest $(NAMESPACE)/$(IMAGENAME):$(VERSION)
 	docker tag -f $(NAMESPACE)/$(IMAGENAME):latest $(NAMESPACE)/$(IMAGENAME):$(VERSION_MAJOR)
 	docker tag -f $(NAMESPACE)/$(IMAGENAME):latest $(NAMESPACE)/$(IMAGENAME):$(VERSION_MINOR)
+	# explicit tag hypriot/rpi-node:version for onbuild's Dockerfile
+	docker tag -f $(NAMESPACE)/$(IMAGENAME):$(VERSION) hypriot/rpi-node:$(VERSION)
 	docker build -t $(NAMESPACE)/$(IMAGENAME):onbuild onbuild
 	docker tag -f $(NAMESPACE)/$(IMAGENAME):onbuild $(NAMESPACE)/$(IMAGENAME):$(VERSION)-onbuild
 	docker tag -f $(NAMESPACE)/$(IMAGENAME):onbuild $(NAMESPACE)/$(IMAGENAME):$(VERSION_MAJOR)-onbuild
