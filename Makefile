@@ -8,7 +8,6 @@ default: dockerbuild push
 
 test:
 	docker run --rm $(NAMESPACE)/$(IMAGENAME) node --help
-	docker run --rm $(NAMESPACE)/$(IMAGENAME) npm --help
 
 version:
 	docker run --rm $(NAMESPACE)/$(IMAGENAME) node --version
