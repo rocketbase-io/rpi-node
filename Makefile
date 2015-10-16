@@ -7,10 +7,12 @@ NAMESPACE ?= hypriot
 default: dockerbuild push
 
 test:
-	docker run --rm $(NAMESPACE)/$(IMAGENAME) --help
+	docker run --rm $(NAMESPACE)/$(IMAGENAME) node --help
+	docker run --rm $(NAMESPACE)/$(IMAGENAME) npm --help
 
 version:
-	docker run --rm $(NAMESPACE)/$(IMAGENAME) --version
+	docker run --rm $(NAMESPACE)/$(IMAGENAME) node --version
+	docker run --rm $(NAMESPACE)/$(IMAGENAME) npm --version
 
 dockerbuild:
 	docker build -t $(NAMESPACE)/$(IMAGENAME) .
