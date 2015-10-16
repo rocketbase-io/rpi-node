@@ -9,8 +9,17 @@ script:
   - wrapdocker &
   - sleep 5
   - docker login --username=$$REGISTRY_USER --password=$$REGISTRY_PASSWORD --email=$$REGISTRY_USER_EMAIL $$REGISTRY_LOCATION
+  - echo "+++++ check if all Dockerfiles are up to date +++++"
+  - sed -i -e "s,FROM hypriot/rpi-node:.*,FROM hypriot/rpi-node:$(cat VERSION)," onbuild/Dockerfile
+  - sed -i -e "s,ENV NODE_VERSION .*,ENV NODE_VERSION $(cat VERSION)," slim/Dockerfile
+  - sed -i -e "s,ENV NODE_VERSION .*,ENV NODE_VERSION $(cat VERSION)," wheezy/Dockerfile
+  - sed -i -e "s,ENV NODE_VERSION .*,ENV NODE_VERSION $(cat VERSION)," Dockerfile
+  - git diff --exit-code
   - echo "+++++ build docker image +++++"
-  - make
+  - make dockerbuild
+  - make test
+  - make version
+  - make push
   - echo "+++++ stop docker daemon +++++"
   - start-stop-daemon --stop --pidfile "/var/run/docker.pid"
   - echo -e "#####################\n***** COMPLETED *****\n#####################"
