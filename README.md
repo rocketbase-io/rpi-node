@@ -13,10 +13,10 @@ Run all the commands from within the project root directory.
 * 4.1.2-onbuild, 4.1-onbuild ([onbuild/Dockerfile](https://github.com/hypriot/rpi-node/blob/master/onbuild/Dockerfile))
 * 4.1.2-slim, 4.1-slim ([slim/Dockerfile](https://github.com/hypriot/rpi-node/blob/master/slim/Dockerfile))
 * 4.1.2-wheezy, 4.1-wheezy ([wheezy/Dockerfile](https://github.com/hypriot/rpi-node/blob/master/wheezy/Dockerfile))
-* 4.2.0, 4.2, 4, latest ([Dockerfile](https://github.com/hypriot/rpi-node/blob/master/Dockerfile))
-* 4.2.0-onbuild, 4.2-onbuild, 4-onbuild, onbuild ([onbuild/Dockerfile](https://github.com/hypriot/rpi-node/blob/master/onbuild/Dockerfile))
-* 4.2.0-slim, 4.2-slim, 4-slim, slim ([slim/Dockerfile](https://github.com/hypriot/rpi-node/blob/master/slim/Dockerfile))
-* 4.2.0-wheezy, 4.2-wheezy, 4-wheezy, wheezy ([wheezy/Dockerfile](https://github.com/hypriot/rpi-node/blob/master/wheezy/Dockerfile))
+* 4.2.1, 4.2, 4, latest ([Dockerfile](https://github.com/hypriot/rpi-node/blob/master/Dockerfile))
+* 4.2.1-onbuild, 4.2-onbuild, 4-onbuild, onbuild ([onbuild/Dockerfile](https://github.com/hypriot/rpi-node/blob/master/onbuild/Dockerfile))
+* 4.2.1-slim, 4.2-slim, 4-slim, slim ([slim/Dockerfile](https://github.com/hypriot/rpi-node/blob/master/slim/Dockerfile))
+* 4.2.1-wheezy, 4.2-wheezy, 4-wheezy, wheezy ([wheezy/Dockerfile](https://github.com/hypriot/rpi-node/blob/master/wheezy/Dockerfile))
 
 ### Build Details
 - [Source Project Page](https://github.com/hypriot)
