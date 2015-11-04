@@ -18,13 +18,15 @@ RUN set -ex \
   done
 
 ENV NPM_CONFIG_LOGLEVEL info
-ENV NODE_VERSION 4.1.2
+ENV NODE_VERSION 5.0.0
 
-RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-armv6l.tar.gz" \
+RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-armv7l.tar.gz" \
   && curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/SHASUMS256.txt.asc" \
   && gpg --verify SHASUMS256.txt.asc \
-  && grep " node-v$NODE_VERSION-linux-armv6l.tar.gz\$" SHASUMS256.txt.asc | sha256sum -c - \
-  && tar -xzf "node-v$NODE_VERSION-linux-armv6l.tar.gz" -C /usr/local --strip-components=1 \
-  && rm "node-v$NODE_VERSION-linux-armv6l.tar.gz" SHASUMS256.txt.asc
+  && grep " node-v$NODE_VERSION-linux-armv7l.tar.gz\$" SHASUMS256.txt.asc | sha256sum -c - \
+  && tar -xzf "node-v$NODE_VERSION-linux-armv7l.tar.gz" -C /usr/local --strip-components=1 \
+  && rm "node-v$NODE_VERSION-linux-armv7l.tar.gz" SHASUMS256.txt.asc
+
+
 
 CMD [ "node" ]
